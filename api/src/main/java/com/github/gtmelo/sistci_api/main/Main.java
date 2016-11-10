@@ -1,5 +1,6 @@
 package com.github.gtmelo.sistci_api.main;
 
+import com.github.gtmelo.sistci_api.controller.DataManager;
 import com.github.gtmelo.sistci_api.controller.TciManager;
 import com.github.gtmelo.sistci_api.json.JsonElement;
 import com.github.gtmelo.sistci_api.json.JsonFactory;
@@ -8,6 +9,10 @@ import com.github.gtmelo.sistci_api.security.exception.DataNotFoundException;
 import com.github.gtmelo.sistci_api.services.v1.Tci;
 import com.github.gtmelo.sistci_api.services.v1.TciResource;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  * Created by 02364114110 on 09/11/2016.
  */
@@ -15,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        test_post();
+        test_db();
 
     }
 
@@ -153,6 +158,25 @@ public class Main {
 
         TciResource tciResource = new TciResource();
         System.out.println(tciResource.createTci(s).toString());
+
+    }
+
+    public static void test_db() {
+
+        Connection c = DataManager.getInstance().getConnection();
+
+        try {
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM tci LIMIT 10");
+
+            while (rs.next()) {
+                System.out.println(rs.getString("id"));
+                System.out.println(rs.getString("nup"));
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
 
     }
 }
