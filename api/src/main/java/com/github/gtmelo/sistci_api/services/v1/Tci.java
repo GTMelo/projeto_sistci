@@ -14,15 +14,15 @@ public class Tci implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
-    private int orgaoId;
-    private int pessoaId;
-    private int categoriaId;
-    private int prazoId;
-    private int fundamentoId;
-    private int grau_sigiloId;
-    private int statusId;
-    private int cidicId;
+    private String id;
+    private String orgaoId;
+    private String pessoaId;
+    private String categoriaId;
+    private String prazoId;
+    private String fundamentoId;
+    private String grau_sigiloId;
+    private String statusId;
+    private String cidicId;
     private String nup;
     private String data_producao;
     private String tipo;
@@ -36,83 +36,83 @@ public class Tci implements Serializable {
     }
 
     @XmlElement(name = "id")
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
     @XmlElement(name = "orgaoId")
-    public int getOrgaoId() {
+    public String getOrgaoId() {
         return orgaoId;
     }
 
-    public void setOrgaoId(int orgaoId) {
+    public void setOrgaoId(String orgaoId) {
         this.orgaoId = orgaoId;
     }
 
     @XmlElement(name = "pessoa")
-    public int getPessoaId() {
+    public String getPessoaId() {
         return pessoaId;
     }
 
-    public void setPessoaId(int pessoaId) {
+    public void setPessoaId(String pessoaId) {
         this.pessoaId = pessoaId;
     }
 
     @XmlElement(name = "categoriaId")
-    public int getCategoriaId() {
+    public String getCategoriaId() {
         return categoriaId;
     }
 
-    public void setCategoriaId(int categoriaId) {
+    public void setCategoriaId(String categoriaId) {
         this.categoriaId = categoriaId;
     }
 
     @XmlElement(name = "prazoId")
-    public int getPrazoId() {
+    public String getPrazoId() {
         return prazoId;
     }
 
-    public void setPrazoId(int prazoId) {
+    public void setPrazoId(String prazoId) {
         this.prazoId = prazoId;
     }
 
     @XmlElement(name = "fundamentoId")
-    public int getFundamentoId() {
+    public String getFundamentoId() {
         return fundamentoId;
     }
 
-    public void setFundamentoId(int fundamentoId) {
+    public void setFundamentoId(String fundamentoId) {
         this.fundamentoId = fundamentoId;
     }
 
     @XmlElement(name = "grau_sigiloId")
-    public int getGrau_sigiloId() {
+    public String getGrau_sigiloId() {
         return grau_sigiloId;
     }
 
-    public void setGrau_sigiloId(int grau_sigiloId) {
+    public void setGrau_sigiloId(String grau_sigiloId) {
         this.grau_sigiloId = grau_sigiloId;
     }
 
     @XmlElement(name = "statusId")
-    public int getStatusId() {
+    public String getStatusId() {
         return statusId;
     }
 
-    public void setStatusId(int statusId) {
+    public void setStatusId(String statusId) {
         this.statusId = statusId;
     }
 
     @XmlElement(name = "cidicId")
-    public int getCidicId() {
+    public String getCidicId() {
         return cidicId;
     }
 
-    public void setCidicId(int cidicId) {
+    public void setCidicId(String cidicId) {
         this.cidicId = cidicId;
     }
 
@@ -150,5 +150,24 @@ public class Tci implements Serializable {
 
     public void setRazaoClassificacao(String razaoClassificacao) {
         this.razaoClassificacao = razaoClassificacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Tci{" +
+                "id=" + id +
+                ", orgaoId=" + orgaoId +
+                ", pessoaId=" + pessoaId +
+                ", categoriaId=" + categoriaId +
+                ", prazoId=" + prazoId +
+                ", fundamentoId=" + fundamentoId +
+                ", grau_sigiloId=" + grau_sigiloId +
+                ", statusId=" + statusId +
+                ", cidicId=" + cidicId +
+                ", nup='" + nup + '\'' +
+                ", data_producao='" + data_producao + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", razaoClassificacao='" + razaoClassificacao + '\'' +
+                '}';
     }
 }
