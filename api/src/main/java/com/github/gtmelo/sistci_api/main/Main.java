@@ -1,36 +1,40 @@
 package com.github.gtmelo.sistci_api.main;
 
 import com.github.gtmelo.sistci_api.controller.DataManager;
-import com.github.gtmelo.sistci_api.controller.TciManager;
+import com.github.gtmelo.sistci_api.data.Tables;
+import com.github.gtmelo.sistci_api.data.tables.AutoridadeRatificadora;
+import com.github.gtmelo.sistci_api.data.tables.Cargo;
+import com.github.gtmelo.sistci_api.data.tables.Tci;
 import com.github.gtmelo.sistci_api.json.JsonElement;
 import com.github.gtmelo.sistci_api.json.JsonFactory;
 import com.github.gtmelo.sistci_api.json.JsonList;
-import com.github.gtmelo.sistci_api.security.exception.DataNotFoundException;
-import com.github.gtmelo.sistci_api.services.v1.Tci;
-import com.github.gtmelo.sistci_api.services.v1.TciResource;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jooq.DSLContext;
+import org.jooq.Record;
+import org.jooq.Result;
+import org.jooq.SQLDialect;
+import org.jooq.impl.DSL;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 /**
  * Created by 02364114110 on 09/11/2016.
  */
 public class Main {
 
+    public static final Logger LOG = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
 
-        test_logging();
+        test_jooq();
 
     }
 
     public static void test_json() {
 
         // create elements
-        JsonElement element  = new JsonElement("foo", "bar");
+        JsonElement element = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
 
         // add, edit, update, remove elements
@@ -49,7 +53,7 @@ public class Main {
         JsonList list = JsonList.build();
 
         // create elements
-        JsonElement element  = new JsonElement("foo", "bar");
+        JsonElement element = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
         JsonElement element2 = new JsonElement("foo2", "bar");
 
@@ -71,7 +75,7 @@ public class Main {
         JsonList list = JsonList.build();
 
         // create elements
-        JsonElement element  = new JsonElement("foo", "bar");
+        JsonElement element = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
         JsonElement element2 = new JsonElement("foo2", "bar");
         JsonElement element3 = new JsonElement("foo3", "bar");
@@ -130,7 +134,7 @@ public class Main {
 
     }
 
-    public static void test_logging(){
+    public static void test_logging() {
 
         Logger logger = LogManager.getLogger(Main.class.getName());
 
@@ -138,6 +142,15 @@ public class Main {
         logger.warn("warn");
         logger.error("error");
         logger.debug("debug");
+
+    }
+
+    public static void test_jooq() {
+
+        Connection c = DataManager.getInstance().getConnection();
+
+        DSLContext create = DSL.using(c, SQLDialect.MYSQL);
+        
 
     }
 }

@@ -1,5 +1,8 @@
 package com.github.gtmelo.sistci_api.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,20 +12,28 @@ import java.sql.SQLException;
  */
 public class DataManager {
 
+    private Logger log;
+
     private static DataManager instance;
     private Connection connection;
 
     private DataManager() {
 
-//        MysqlDataSource dataSource = new MysqlDataSource();
-//        dataSource.setUser("root");
-//        dataSource.setPassword("root");
-//        dataSource.setServerName("localhost");
-//        dataSource.setPort(3306);
-//        dataSource.setDatabaseName("sistci");
+        log = LogManager.getLogger(DataManager.class);
+
+        String host = "192.168.56.100";
+        String port = "3306";
+        String db = "sistci";
+        String user = "teste";
+        String pass = "teste";
+
+        String url = String.format("jdbc:mysql://%s:%s/%s", host, port, db);
+
         try {
-            this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistci?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
+            log.debug("Attempting to connect to db now");
+            connection = DriverManager.getConnection(url,user,pass);
         } catch (SQLException e) {
+            log.fatal("Failed to connect to db");
             e.printStackTrace();
         }
 
