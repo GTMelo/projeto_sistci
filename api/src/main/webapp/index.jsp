@@ -1,6 +1,6 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="/services/v1/tci/xx">click for xx</a>
+<a href="/api-docs/">click for docs</a>
 </body>
 </html>

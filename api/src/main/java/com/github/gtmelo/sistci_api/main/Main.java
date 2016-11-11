@@ -8,6 +8,9 @@ import com.github.gtmelo.sistci_api.json.JsonList;
 import com.github.gtmelo.sistci_api.security.exception.DataNotFoundException;
 import com.github.gtmelo.sistci_api.services.v1.Tci;
 import com.github.gtmelo.sistci_api.services.v1.TciResource;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,14 +23,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        test_db();
+        test_logging();
 
     }
 
     public static void test_json() {
 
         // create elements
-        JsonElement element = new JsonElement("foo", "bar");
+        JsonElement element  = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
 
         // add, edit, update, remove elements
@@ -46,7 +49,7 @@ public class Main {
         JsonList list = JsonList.build();
 
         // create elements
-        JsonElement element = new JsonElement("foo", "bar");
+        JsonElement element  = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
         JsonElement element2 = new JsonElement("foo2", "bar");
 
@@ -68,7 +71,7 @@ public class Main {
         JsonList list = JsonList.build();
 
         // create elements
-        JsonElement element = new JsonElement("foo", "bar");
+        JsonElement element  = new JsonElement("foo", "bar");
         JsonElement element1 = new JsonElement("foo1", "bar");
         JsonElement element2 = new JsonElement("foo2", "bar");
         JsonElement element3 = new JsonElement("foo3", "bar");
@@ -127,56 +130,14 @@ public class Main {
 
     }
 
-    public static void test_tciFetch() {
+    public static void test_logging(){
 
-        Tci tci = null;
-        Tci tci_bad = null;
+        Logger logger = LogManager.getLogger(Main.class.getName());
 
-        try {
-            tci = TciManager.getInstance().findTci("123456");
-            tci_bad = TciManager.getInstance().findTci("12345");
-        } catch (DataNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-
-        System.out.println(tci.toString());
-        try {
-            System.out.println(tci_bad.toString());
-        } catch (Exception e) {
-            System.out.println("whatever");
-        }
-
-//        System.out.println(RequestValidator.getInstance().validarRequest("1234"));
-
-    }
-
-    public static void test_post() {
-
-        String s = "{\"id\":2,\"orgaoId\":3,\"pessoaId\":2,\"categoriaId\":2,\"prazoId\":2,\"fundamentoId\":2,\"grau_sigiloId\":2,\"statusId\":2,\"cidicId\":2,\"nup\":\"nup2\",\"data_producao\":\"01/01/2020\",\"tipo\":\"Carta 1/2025\",\"razaoClassificacao\":\"Razão XYZZZZZ\"}";
-
-        System.out.println(s);
-
-        TciResource tciResource = new TciResource();
-        System.out.println(tciResource.createTci(s).toString());
-
-    }
-
-    public static void test_db() {
-
-        Connection c = DataManager.getInstance().getConnection();
-
-        try {
-            Statement s = c.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM tci LIMIT 10");
-
-            while (rs.next()) {
-                System.out.println(rs.getString("id"));
-                System.out.println(rs.getString("nup"));
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        }
+        logger.info("Info");
+        logger.warn("warn");
+        logger.error("error");
+        logger.debug("debug");
 
     }
 }
