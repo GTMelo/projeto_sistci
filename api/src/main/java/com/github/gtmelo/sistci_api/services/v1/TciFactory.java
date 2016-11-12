@@ -1,5 +1,6 @@
 package com.github.gtmelo.sistci_api.services.v1;
 
+import com.github.gtmelo.sistci_api.controller.DataManager;
 import org.json.simple.JSONObject;
 
 /**
@@ -64,5 +65,7 @@ public class TciFactory {
         return tci;
 
     }
+
+    private static void send(){}
 
 }

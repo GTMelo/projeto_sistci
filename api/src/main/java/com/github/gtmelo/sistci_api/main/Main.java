@@ -148,9 +148,11 @@ public class Main {
     public static void test_jooq() {
 
         Connection c = DataManager.getInstance().getConnection();
-
         DSLContext create = DSL.using(c, SQLDialect.MYSQL);
-        
 
+        for(Record r : create.select().from(Tables.TCI).limit(10).fetch()){
+
+            LOG.info(r.toString());
+        }
     }
 }

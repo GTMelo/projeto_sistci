@@ -6,6 +6,7 @@ import com.github.gtmelo.sistci_api.services.v1.Tci;
 import com.github.gtmelo.sistci_api.services.v1.TciFactory;
 import org.json.simple.JSONObject;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,24 +36,18 @@ public class TciManager {
         }
     }
 
-    public List<Tci> findTci() throws DataNotFoundException {
+    public List<Tci> findTci(int offset) throws DataNotFoundException, SQLException {
 
         //TODO Trocar para validação definitiva
-        String validar = "123456";
+        String  validar   = "123456";
         boolean validacao = RequestValidator.getInstance().validarRequest(validar);
 
         List<Tci> tcis = new ArrayList<Tci>();
         if (validacao) {
 
-            Tci tci = TciFactory.build();
-            Tci tci1 = TciFactory.build();
-            Tci tci2 = TciFactory.build();
-
-            tcis.add(tci);
-            tcis.add(tci1);
-            tcis.add(tci2);
-
+            tcis = DataManager.getInstance().selectTcis(tcis, offset);
             return tcis;
+
         } else {
             throw new DataNotFoundException(this.getClass().getSimpleName(), "Dados não encontrados");
         }

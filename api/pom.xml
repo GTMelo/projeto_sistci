@@ -5,8 +5,17 @@
     <artifactId>sistci_api</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>sistci_api Maven Webapp</name>
+    <name>sistci_api Maven Webap8p</name>
     <url>http://maven.apache.org</url>
+
+    <!-- ATENÇÃO: preencher as configurações de conexão com o BD abaixo -->
+    <properties>
+        <dbHost>jdbc:mysql://192.168.0.98:3306</dbHost>
+        <dbname>sistci</dbname>
+        <dbUser>webserver</dbUser>
+        <dbPass>webserver</dbPass>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -90,7 +99,72 @@
             <version>2.5-20081211</version>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>sistci_api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+
+                <!-- Specify the maven code generator plugin -->
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.4.5</version>
+
+                <!-- The plugin should hook into the generate goal -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <!-- Manage the plugin's dependency. In this example, we'll use a PostgreSQL database -->
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>6.0.5</version>
+                    </dependency>
+                </dependencies>
+
+                <!-- Specify the plugin configuration.
+                     The configuration format is the same as for the standalone code generator -->
+                <configuration>
+
+                    <!-- JDBC connection parameters -->
+                    <jdbc>
+                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <url>${dbHost}</url>
+                        <user>${dbUser}</user>
+                        <password>${dbPass}</password>
+                    </jdbc>
+
+                    <!-- Generator parameters -->
+                    <generator>
+                        <database>
+                            <name>org.jooq.util.mysql.MySQLDatabase</name>
+                            <includes>.*</includes>
+                            <excludes></excludes>
+                            <inputSchema>${dbname}</inputSchema>
+                        </database>
+                        <target>
+                            <packageName>com.github.gtmelo.sistci_api.data</packageName>
+                            <directory>/src/main/java</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

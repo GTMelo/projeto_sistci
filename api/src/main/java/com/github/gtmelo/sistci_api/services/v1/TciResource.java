@@ -11,6 +11,7 @@ import org.json.simple.JSONValue;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -67,7 +68,9 @@ public class TciResource {
     public Response getTci() {
         try {
 
-            List<Tci> tcis = TciManager.getInstance().findTci();
+            int offset = 0;
+
+            List<Tci> tcis = TciManager.getInstance().findTci(offset);
             TciHolder tciHolder = new TciHolder();
             tciHolder.setTcis(tcis);
 
@@ -77,6 +80,12 @@ public class TciResource {
 
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity(JsonFactory.output(new JsonElement("error", "bad tciId"), new JsonElement("status", "FAIL")))
+                    .build();
+
+        } catch (SQLException e) {
+
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(JsonFactory.output(new JsonElement("error", "no data found"), new JsonElement("status", "FAIL")))
                     .build();
 
         }
