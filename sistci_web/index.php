@@ -14,12 +14,12 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="view/style/css.css"/>
         <title>
-            Portal SisTci
+            SisTci Intranet
         </title>
     </head>
     <body>
         <?php include "view/include/header.inc"; ?>
-
-
-
+        <div class="container" id="content_container">
+            <?php include "view/navigation/mostra_tci.php"; ?>
+        </div>
         <?php include "view/include/footer.inc"; ?>
