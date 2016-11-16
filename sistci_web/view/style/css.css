@@ -1,0 +1,122 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/11/2016, 21:06:27
+    Author     : Gustavo
+*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+/*html {
+  position: relative;
+  min-height: 100%;
+}*/
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.footer p{
+    color: #CDB380
+}
+
+.bg-color1{
+    background-color: #473E35;
+}
+.bg-color2{
+    background-color: #3C2E2B;
+}
+
+.bg-color3{
+    background-color: #834633;
+}
+
+.bg-color4{
+    background-color: #F2DDC2;
+}
+
+.bg-color5{
+    background-color: #322423;
+}
+
+.border-color-1 {
+    border: 2px solid #834633
+}
+
+.border-top-color3{
+    border-top: 3px solid  #CDB380
+}
+
+.border-bottom-color3_4{
+    position: relative;
+    border-bottom: 5px solid #834633;
+    outline: 3px solid #CDB380
+}
+
+#content_container {
+    margin-top: 30px;
+}
+
+.svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+    background-color: #834633;
+    border-radius: 5px;
+    padding: 5px;
+    transition: fill .3s ease-out;
+}
+
+.svg:hover {
+    fill: #E8DDCB;
+}
+
+.navbar .nav > li > a {
+  line-height: 40px;
+}
+
+.border-radius {
+    border-radius: 5px;
+}
+
+.padded-sml {
+    padding: 5px;
+}
+
+.padded-md {
+    padding: 10px;
+}
+
+.boxed{
+    background-color: #E8DDCB;
+    border: 2px solid #CDB380;
+}
+
+.itemrow{
+    margin: 0 .9em;
+}
+
+.col-divider {
+    border-left: 1px solid #CDB380;
+    padding-left: 1.8em;
+}
+
+.h4-line {
+    border-bottom: 1px solid #CDB380; 
+}
+
+.h-border > h3 {
+    padding-bottom: 3px;
+    border-bottom: 1px solid #E6E6E6
+}

@@ -20,6 +20,6 @@ and open the template in the editor.
     <body>
         <?php include "view/include/header.inc"; ?>
         <div class="container" id="content_container">
-            <?php include "view/navigation/mostra_tci.php"; ?>
+            <?php include "view/navigation/tci.php"; ?>
         </div>
-        <?php include "view/include/footer.inc"; ?>
+        <?php // include "view/include/footer.inc"; ?>
