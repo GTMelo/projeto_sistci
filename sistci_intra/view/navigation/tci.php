@@ -74,7 +74,7 @@
             </div>
 
         </form>
-        <div class="col-md-6 h-border">
+        <div class="col-md-6 h-border" id="dados_documento">
             <div class="card text-xs-center">
                 <div class="card-block">
                     <h3 class="card-title">
@@ -89,17 +89,17 @@
                     <button class="btn btn-primary" type="submit">Reclassificar</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="classificacao_card">
                 <div class="card-block">
                     <h4 class="card-title">Classificação</h4>
                     <h6 class="card-subtitle text-muted">Data da classificação: ${data_classificacao}</h6>
                     <p class="card-text">
                     <dt class="col-md-5">Classificado por:</dt>
-                    <dd class="col-md-7">João da Silva Marcos Nascimento Moura</dd>
+                    <dd class="col-md-7">${autoridade_classificadora}</dd>
                     </p>
                     <p class="card-text">
                     <dt class="col-md-5">Ratificado por:</dt>
-                    <dd class="col-md-7">João da Silva Marcos Nascimento Moura</dd>
+                    <dd class="col-md-7">${autoridade_ratificadora}</dd>
                     </p>
                     <p class="card-text">
                     <dt class="col-md-5">Prazo restrição de acesso:</dt>
@@ -110,13 +110,13 @@
                     </center>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="desclassificacao_card">
                 <div class="card-block">
                     <h4 class="card-title">Desclassificação</h4>
                     <h6 class="card-subtitle text-muted">Data da desclassificação: ${data_desclassificacao}</h6>
                     <p class="card-text">
                     <dt class="col-md-5">Assinado por:</dt>
-                    <dd class="col-md-7">João da Silva Marcos Nascimento Moura</dd>
+                    <dd class="col-md-7">${autoridade_classificadora}</dd>
                     </p>
                     <center>
                         <a href="#" class="card-link btn btn-primary">TCI</a>
