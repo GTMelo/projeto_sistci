@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Cargo extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.CargoRecord> {
 
-	private static final long serialVersionUID = 628587495;
+	private static final long serialVersionUID = -488172592;
 
 	/**
 	 * The singleton instance of <code>sistci.cargo</code>
@@ -37,9 +37,9 @@ public class Cargo extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CargoRecord, java.lang.String> DESCRICAO = createField("descricao", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
 
 	/**
-	 * The column <code>sistci.cargo.orgaoid</code>.
+	 * The column <code>sistci.cargo.orgao_chefiaid</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CargoRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CargoRecord, java.lang.Integer> ORGAO_CHEFIAID = createField("orgao_chefiaid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.cargo</code> table reference

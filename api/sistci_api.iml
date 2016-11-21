@@ -20,7 +20,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/jooq" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
       <excludeFolder url="file://$MODULE_DIR$/target/sistci_api" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
       <excludeFolder url="file://$MODULE_DIR$/target/test" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -29,6 +31,7 @@
     <orderEntry type="library" name="Maven: org.jooq:jooq-meta:3.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.jooq:jooq-codegen:3.8.6" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.5" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-jersey2-jaxrs:1.5.0" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-jaxrs:1.5.0" level="project" />

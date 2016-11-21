@@ -1,15 +1,9 @@
 package com.github.gtmelo.sistci_api.controller;
 
-import com.github.gtmelo.sistci_api.data.Tables;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jooq.DSLContext;
-import org.jooq.Record;
-import org.jooq.Result;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
-import org.jooq.impl.TableImpl;
+import util.ConfigManager;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -17,16 +11,16 @@ import java.sql.SQLException;
 /**
  * Created by 02364114110 on 10/11/2016.
  */
-public class DataManager {
+public class ConnectionManager {
 
-    private static DataManager     instance;
-    private        Logger          log;
-    private        MysqlDataSource dataSource;
-    private        Connection      connection;
+    private static ConnectionManager instance;
+    private        Logger            log;
+    private        MysqlDataSource   dataSource;
+    private        Connection        connection;
 
-    private DataManager() {
+    private ConnectionManager() {
 
-        log = LogManager.getLogger(DataManager.class);
+        log = LogManager.getLogger(ConnectionManager.class);
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -35,11 +29,13 @@ public class DataManager {
             e.printStackTrace();
         }
 
-        String host = "192.168.0.98";
-        int    port = 3306;
-        String db   = "sistci";
-        String user = "webserver";
-        String pass = "webserver";
+        ConfigManager c = ConfigManager.getInstance();
+
+        String host = c.getDbHost();
+        int    port = c.getDbPort();
+        String db   = c.getDbName();
+        String user = c.getDbUser();
+        String pass = c.getDbPass();
 
         dataSource = new MysqlDataSource();
         dataSource.setServerName(host);
@@ -48,13 +44,12 @@ public class DataManager {
         dataSource.setUser(user);
         dataSource.setPassword(pass);
 
-//            connection = DriverManager.getConnection(url,user,pass);
     }
 
-    public static DataManager getInstance() throws SQLException {
+    public static ConnectionManager getInstance() throws SQLException {
 
+        if (instance == null) instance = new ConnectionManager();
         instance.log.debug("Tentando conexão com banco de dados");
-        if (instance == null) instance = new DataManager();
         instance.connection = instance.dataSource.getConnection();
         return instance;
     }

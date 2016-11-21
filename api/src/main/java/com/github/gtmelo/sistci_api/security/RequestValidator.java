@@ -2,6 +2,8 @@ package com.github.gtmelo.sistci_api.security;
 
 import com.github.gtmelo.sistci_api.security.rule.ExampleRule;
 import com.github.gtmelo.sistci_api.security.rule.ISecurityRule;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,9 @@ public class RequestValidator {
      *
      * @return String "ok" para requests aceitas, código do erro para erros
      */
+
+    private Logger log = LogManager.getLogger(RequestValidator.class);
+
     public boolean validarRequest(String dados) {
 
         try {
@@ -42,8 +47,8 @@ public class RequestValidator {
                 regra.validate(dados);
             }
         } catch (Exception e) {
-            // TODO Log a exceção
-            System.out.println(e.getMessage());
+            log.warn("Uma tentativa de acesso a dados foi negada: " + dados);
+
             return false;
         }
 

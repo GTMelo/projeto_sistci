@@ -1,8 +1,10 @@
 package com.github.gtmelo.sistci_api.services.v1;
 
+import javax.persistence.Column;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by 02364114110 on 09/11/2016.
@@ -12,108 +14,69 @@ import java.io.Serializable;
 
 public class Tci implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    private String id;
-    private String orgaoId;
-    private String pessoaId;
-    private String categoriaId;
-    private String prazoId;
-    private String fundamentoId;
-    private String grau_sigiloId;
-    private String statusId;
-    private String cidicId;
+    private static final long serialVersionUID = -4643274244715253313L;
+    @Column(name = "id")
+    private int    id;
+    @Column(name = "data_producao")
+    private Date   data_producao;
+    @Column(name = "tipo_documento")
+    private String tipo_documento;
+    @Column(name = "razao_classificacao")
+    private String razao_classificacao;
+    @Column(name = "nup")
     private String nup;
-    private String data_producao;
-    private String tipo;
-    private String razaoClassificacao;
+    @Column(name = "cidic")
+    private String cidic;
+    @Column(name = "orgao")
+    private int    orgao;
+    @Column(name = "categoria")
+    private int    categoria;
+    @Column(name = "prazo")
+    private int    prazo;
+    @Column(name = "fundamento_legal")
+    private int    fundamentoLegal;
+    @Column(name = "grau_sigilo")
+    private int    grauSigilo;
+    @Column(name = "status")
+    private int    status;
 
-    private Tci() {
-    }
-
-    protected static Tci build() {
-        return new Tci();
+    Tci() {
     }
 
     @XmlElement(name = "id")
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    @XmlElement(name = "orgaoId")
-    public String getOrgaoId() {
-        return orgaoId;
+    @XmlElement(name = "data_producao")
+    public Date getData_producao() {
+        return data_producao;
     }
 
-    public void setOrgaoId(String orgaoId) {
-        this.orgaoId = orgaoId;
+    public void setData_producao(Date data_producao) {
+        this.data_producao = data_producao;
     }
 
-    @XmlElement(name = "pessoa")
-    public String getPessoaId() {
-        return pessoaId;
+    @XmlElement(name = "tipo_documento")
+    public String getTipo_documento() {
+        return tipo_documento;
     }
 
-    public void setPessoaId(String pessoaId) {
-        this.pessoaId = pessoaId;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    @XmlElement(name = "categoriaId")
-    public String getCategoriaId() {
-        return categoriaId;
+    @XmlElement(name = "razao_classificacao")
+    public String getRazao_classificacao() {
+        return razao_classificacao;
     }
 
-    public void setCategoriaId(String categoriaId) {
-        this.categoriaId = categoriaId;
-    }
-
-    @XmlElement(name = "prazoId")
-    public String getPrazoId() {
-        return prazoId;
-    }
-
-    public void setPrazoId(String prazoId) {
-        this.prazoId = prazoId;
-    }
-
-    @XmlElement(name = "fundamentoId")
-    public String getFundamentoId() {
-        return fundamentoId;
-    }
-
-    public void setFundamentoId(String fundamentoId) {
-        this.fundamentoId = fundamentoId;
-    }
-
-    @XmlElement(name = "grau_sigiloId")
-    public String getGrau_sigiloId() {
-        return grau_sigiloId;
-    }
-
-    public void setGrau_sigiloId(String grau_sigiloId) {
-        this.grau_sigiloId = grau_sigiloId;
-    }
-
-    @XmlElement(name = "statusId")
-    public String getStatusId() {
-        return statusId;
-    }
-
-    public void setStatusId(String statusId) {
-        this.statusId = statusId;
-    }
-
-    @XmlElement(name = "cidicId")
-    public String getCidicId() {
-        return cidicId;
-    }
-
-    public void setCidicId(String cidicId) {
-        this.cidicId = cidicId;
+    public void setRazao_classificacao(String razao_classificacao) {
+        this.razao_classificacao = razao_classificacao;
     }
 
     @XmlElement(name = "nup")
@@ -125,49 +88,84 @@ public class Tci implements Serializable {
         this.nup = nup;
     }
 
-    @XmlElement(name = "data_producao")
-    public String getData_producao() {
-        return data_producao;
+    @XmlElement(name = "cidic")
+    public String getCidic() {
+        return cidic;
     }
 
-    public void setData_producao(String data_producao) {
-        this.data_producao = data_producao;
+    public void setCidic(String cidic) {
+        this.cidic = cidic;
     }
 
-    @XmlElement(name = "tipo")
-    public String getTipo() {
-        return tipo;
+    @XmlElement(name = "orgao")
+    public int getOrgao() {
+        return orgao;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setOrgao(int orgao) {
+        this.orgao = orgao;
     }
 
-    @XmlElement(name = "razaoClassificacao")
-    public String getRazaoClassificacao() {
-        return razaoClassificacao;
+    @XmlElement(name = "categoria")
+    public int getCategoria() {
+        return categoria;
     }
 
-    public void setRazaoClassificacao(String razaoClassificacao) {
-        this.razaoClassificacao = razaoClassificacao;
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
+    }
+
+    @XmlElement(name = "prazo")
+    public int getPrazo() {
+        return prazo;
+    }
+
+    public void setPrazo(int prazo) {
+        this.prazo = prazo;
+    }
+
+    @XmlElement(name = "fundamento_legal")
+    public int getFundamentoLegal() {
+        return fundamentoLegal;
+    }
+
+    public void setFundamentoLegal(int fundamentoLegal) {
+        this.fundamentoLegal = fundamentoLegal;
+    }
+
+    @XmlElement(name = "grau_sigilo")
+    public int getGrauSigilo() {
+        return grauSigilo;
+    }
+
+    public void setGrauSigilo(int grauSigilo) {
+        this.grauSigilo = grauSigilo;
+    }
+
+    @XmlElement(name = "status")
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Tci{" +
                 "id=" + id +
-                ", orgaoId=" + orgaoId +
-                ", pessoaId=" + pessoaId +
-                ", categoriaId=" + categoriaId +
-                ", prazoId=" + prazoId +
-                ", fundamentoId=" + fundamentoId +
-                ", grau_sigiloId=" + grau_sigiloId +
-                ", statusId=" + statusId +
-                ", cidicId=" + cidicId +
+                ", data_producao=" + data_producao +
+                ", tipo_documento='" + tipo_documento + '\'' +
+                ", razao_classificacao='" + razao_classificacao + '\'' +
                 ", nup='" + nup + '\'' +
-                ", data_producao='" + data_producao + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", razaoClassificacao='" + razaoClassificacao + '\'' +
+                ", cidic='" + cidic + '\'' +
+                ", orgao=" + orgao +
+                ", categoria=" + categoria +
+                ", prazo=" + prazo +
+                ", fundamentoLegal=" + fundamentoLegal +
+                ", grauSigilo=" + grauSigilo +
+                ", status=" + status +
                 '}';
     }
 }

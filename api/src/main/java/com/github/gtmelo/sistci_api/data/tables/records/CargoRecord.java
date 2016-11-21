@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables.records;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gtmelo.sistci_api.data.tables.records.CargoRecord> implements org.jooq.Record3<java.lang.Integer, java.lang.String, java.lang.Integer> {
 
-	private static final long serialVersionUID = 629761240;
+	private static final long serialVersionUID = 287903013;
 
 	/**
 	 * Setter for <code>sistci.cargo.id</code>.
@@ -42,16 +42,16 @@ public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gt
 	}
 
 	/**
-	 * Setter for <code>sistci.cargo.orgaoid</code>.
+	 * Setter for <code>sistci.cargo.orgao_chefiaid</code>.
 	 */
-	public void setOrgaoid(java.lang.Integer value) {
+	public void setOrgaoChefiaid(java.lang.Integer value) {
 		setValue(2, value);
 	}
 
 	/**
-	 * Getter for <code>sistci.cargo.orgaoid</code>.
+	 * Getter for <code>sistci.cargo.orgao_chefiaid</code>.
 	 */
-	public java.lang.Integer getOrgaoid() {
+	public java.lang.Integer getOrgaoChefiaid() {
 		return (java.lang.Integer) getValue(2);
 	}
 
@@ -108,7 +108,7 @@ public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gt
 	 */
 	@Override
 	public org.jooq.Field<java.lang.Integer> field3() {
-		return com.github.gtmelo.sistci_api.data.tables.Cargo.CARGO.ORGAOID;
+		return com.github.gtmelo.sistci_api.data.tables.Cargo.CARGO.ORGAO_CHEFIAID;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gt
 	 */
 	@Override
 	public java.lang.Integer value3() {
-		return getOrgaoid();
+		return getOrgaoChefiaid();
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gt
 	 */
 	@Override
 	public CargoRecord value3(java.lang.Integer value) {
-		setOrgaoid(value);
+		setOrgaoChefiaid(value);
 		return this;
 	}
 
@@ -184,11 +184,11 @@ public class CargoRecord extends org.jooq.impl.UpdatableRecordImpl<com.github.gt
 	/**
 	 * Create a detached, initialised CargoRecord
 	 */
-	public CargoRecord(java.lang.Integer id, java.lang.String descricao, java.lang.Integer orgaoid) {
+	public CargoRecord(java.lang.Integer id, java.lang.String descricao, java.lang.Integer orgaoChefiaid) {
 		super(com.github.gtmelo.sistci_api.data.tables.Cargo.CARGO);
 
 		setValue(0, id);
 		setValue(1, descricao);
-		setValue(2, orgaoid);
+		setValue(2, orgaoChefiaid);
 	}
 }

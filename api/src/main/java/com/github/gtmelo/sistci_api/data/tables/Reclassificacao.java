@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Reclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord> {
 
-	private static final long serialVersionUID = -193722864;
+	private static final long serialVersionUID = -493064193;
 
 	/**
 	 * The singleton instance of <code>sistci.reclassificacao</code>
@@ -32,14 +32,34 @@ public class Reclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.s
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
+	 * The column <code>sistci.reclassificacao.data</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.sql.Date> DATA = createField("data", org.jooq.impl.SQLDataType.DATE.nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.reclassificacao.imagem</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.String> IMAGEM = createField("imagem", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
+
+	/**
 	 * The column <code>sistci.reclassificacao.grau_sigiloid</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> GRAU_SIGILOID = createField("grau_sigiloid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.reclassificacao.operacaoid</code>.
+	 * The column <code>sistci.reclassificacao.pessoaid</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> OPERACAOID = createField("operacaoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> PESSOAID = createField("pessoaid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.reclassificacao.autoridadeid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> AUTORIDADEID = createField("autoridadeid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.reclassificacao.tciid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, java.lang.Integer> TCIID = createField("tciid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.reclassificacao</code> table reference
@@ -92,7 +112,7 @@ public class Reclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.s
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.FKRECLASSIFI428042, com.github.gtmelo.sistci_api.data.Keys.FKRECLASSIFI625325);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ReclassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.RECLASSIFICACAO_GRAU_SIGILO, com.github.gtmelo.sistci_api.data.Keys.PESSOA_RECLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.AUTORIDADE_RECLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.TCI_RECLASSIFICACAO);
 	}
 
 	/**

@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Categoria extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.CategoriaRecord> {
 
-	private static final long serialVersionUID = -1213557882;
+	private static final long serialVersionUID = -855535772;
 
 	/**
 	 * The singleton instance of <code>sistci.categoria</code>
@@ -32,9 +32,14 @@ public class Categoria extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CategoriaRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.categoria.categoria</code>.
+	 * The column <code>sistci.categoria.codigo</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CategoriaRecord, java.lang.String> CATEGORIA_ = createField("categoria", org.jooq.impl.SQLDataType.VARCHAR.length(50), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CategoriaRecord, java.lang.String> CODIGO = createField("codigo", org.jooq.impl.SQLDataType.VARCHAR.length(2), this, "");
+
+	/**
+	 * The column <code>sistci.categoria.descricao</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CategoriaRecord, java.lang.String> DESCRICAO = createField("descricao", org.jooq.impl.SQLDataType.VARCHAR.length(50), this, "");
 
 	/**
 	 * Create a <code>sistci.categoria</code> table reference

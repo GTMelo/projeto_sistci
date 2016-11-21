@@ -41,6 +41,13 @@
             <version>6.0.5</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
@@ -160,7 +167,7 @@
                         </database>
                         <target>
                             <packageName>com.github.gtmelo.sistci_api.data</packageName>
-                            <directory>/src/main/java</directory>
+                            <directory>src/main/java</directory>
                         </target>
                     </generator>
                 </configuration>

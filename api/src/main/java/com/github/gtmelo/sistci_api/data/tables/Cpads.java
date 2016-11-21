@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Cpads extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord> {
 
-	private static final long serialVersionUID = -1932128407;
+	private static final long serialVersionUID = -1575991509;
 
 	/**
 	 * The singleton instance of <code>sistci.cpads</code>
@@ -32,11 +32,6 @@ public class Cpads extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.cpads.orgaoid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
-
-	/**
 	 * The column <code>sistci.cpads.portaria_nomeacao</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord, java.lang.String> PORTARIA_NOMEACAO = createField("portaria_nomeacao", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
@@ -45,6 +40,11 @@ public class Cpads extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	 * The column <code>sistci.cpads.data_formacao</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord, java.sql.Date> DATA_FORMACAO = createField("data_formacao", org.jooq.impl.SQLDataType.DATE, this, "");
+
+	/**
+	 * The column <code>sistci.cpads.orgaoid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.CpadsRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.cpads</code> table reference

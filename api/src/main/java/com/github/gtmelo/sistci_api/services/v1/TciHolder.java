@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TciHolder implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -2786628495607296745L;
 
     @XmlElement(name = "id")
     private List<Tci> tcis;
@@ -24,5 +24,12 @@ public class TciHolder implements Serializable {
 
     public void setTcis(List<Tci> tcis) {
         this.tcis = tcis;
+    }
+
+    @Override
+    public String toString() {
+        return "TciHolder{" +
+                "tcis=" + tcis +
+                '}';
     }
 }

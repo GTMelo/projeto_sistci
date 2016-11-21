@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Pessoa extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord> {
 
-	private static final long serialVersionUID = 1423507542;
+	private static final long serialVersionUID = -1926598702;
 
 	/**
 	 * The singleton instance of <code>sistci.pessoa</code>
@@ -32,29 +32,39 @@ public class Pessoa extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
+	 * The column <code>sistci.pessoa.cpf</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.String> CPF = createField("cpf", org.jooq.impl.SQLDataType.VARCHAR.length(11), this, "");
+
+	/**
+	 * The column <code>sistci.pessoa.matricula_siape</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.String> MATRICULA_SIAPE = createField("matricula_siape", org.jooq.impl.SQLDataType.VARCHAR.length(7), this, "");
+
+	/**
+	 * The column <code>sistci.pessoa.nome</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.String> NOME = createField("nome", org.jooq.impl.SQLDataType.VARCHAR.length(254).nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.pessoa.senhaHash</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.String> SENHAHASH = createField("senhaHash", org.jooq.impl.SQLDataType.VARCHAR.length(64), this, "");
+
+	/**
 	 * The column <code>sistci.pessoa.emailid</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> EMAILID = createField("emailid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> EMAILID = createField("emailid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.pessoa.cargoid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> CARGOID = createField("cargoid", org.jooq.impl.SQLDataType.INTEGER.defaulted(true), this, "");
 
 	/**
 	 * The column <code>sistci.pessoa.orgaoid</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
-
-	/**
-	 * The column <code>sistci.pessoa.cargoid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> CARGOID = createField("cargoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.pessoa.matricula_siape</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.Integer> MATRICULA_SIAPE = createField("matricula_siape", org.jooq.impl.SQLDataType.INTEGER, this, "");
-
-	/**
-	 * The column <code>sistci.pessoa.nome</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, java.lang.String> NOME = createField("nome", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
 
 	/**
 	 * Create a <code>sistci.pessoa</code> table reference
@@ -107,7 +117,7 @@ public class Pessoa extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.PESSOA_EMAIL, com.github.gtmelo.sistci_api.data.Keys.ORGAO_PESSOA, com.github.gtmelo.sistci_api.data.Keys.PESSOA_CARGO);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.PessoaRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.EMAIL_PESSOA, com.github.gtmelo.sistci_api.data.Keys.PESSOA_CARGO, com.github.gtmelo.sistci_api.data.Keys.ORGAO_PESSOA);
 	}
 
 	/**

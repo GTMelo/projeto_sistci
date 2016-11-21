@@ -25,7 +25,7 @@
         <module name="sistci_api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="sistci_api" target="1.8" />
     </bytecodeTargetLevel>
   </component>

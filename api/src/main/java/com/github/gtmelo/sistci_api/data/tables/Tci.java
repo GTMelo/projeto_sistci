@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tci extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.TciRecord> {
 
-	private static final long serialVersionUID = 1736409723;
+	private static final long serialVersionUID = -560980346;
 
 	/**
 	 * The singleton instance of <code>sistci.tci</code>
@@ -32,44 +32,19 @@ public class Tci extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.da
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.tci.orgaoid</code>.
+	 * The column <code>sistci.tci.data_producao</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.sql.Date> DATA_PRODUCAO = createField("data_producao", org.jooq.impl.SQLDataType.DATE, this, "");
 
 	/**
-	 * The column <code>sistci.tci.pessoaid</code>.
+	 * The column <code>sistci.tci.tipo_documento</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> PESSOAID = createField("pessoaid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> TIPO_DOCUMENTO = createField("tipo_documento", org.jooq.impl.SQLDataType.VARCHAR.length(254).nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.tci.categoriaid</code>.
+	 * The column <code>sistci.tci.razao_classificacao</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> CATEGORIAID = createField("categoriaid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.tci.prazoid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> PRAZOID = createField("prazoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.tci.fundamento_legalid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> FUNDAMENTO_LEGALID = createField("fundamento_legalid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.tci.grau_sigiloid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> GRAU_SIGILOID = createField("grau_sigiloid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.tci.statusid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> STATUSID = createField("statusid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.tci.cidicid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> CIDICID = createField("cidicid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> RAZAO_CLASSIFICACAO = createField("razao_classificacao", org.jooq.impl.SQLDataType.VARCHAR.length(254).nullable(false), this, "");
 
 	/**
 	 * The column <code>sistci.tci.nup</code>.
@@ -77,19 +52,39 @@ public class Tci extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.da
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> NUP = createField("nup", org.jooq.impl.SQLDataType.VARCHAR.length(50).nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.tci.data_producao</code>.
+	 * The column <code>sistci.tci.cidic</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.sql.Date> DATA_PRODUCAO = createField("data_producao", org.jooq.impl.SQLDataType.DATE, this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> CIDIC = createField("cidic", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
 
 	/**
-	 * The column <code>sistci.tci.tipo</code>.
+	 * The column <code>sistci.tci.orgaoid</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> TIPO = createField("tipo", org.jooq.impl.SQLDataType.VARCHAR.length(254).nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> ORGAOID = createField("orgaoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
-	 * The column <code>sistci.tci.razao_classificacao</code>.
+	 * The column <code>sistci.tci.categoriaid</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.String> RAZAO_CLASSIFICACAO = createField("razao_classificacao", org.jooq.impl.SQLDataType.VARCHAR.length(254).nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> CATEGORIAID = createField("categoriaid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.tci.prazoid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> PRAZOID = createField("prazoid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.tci.fundamento_legalid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> FUNDAMENTO_LEGALID = createField("fundamento_legalid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.tci.grau_sigiloid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> GRAU_SIGILOID = createField("grau_sigiloid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.tci.statusid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, java.lang.Integer> STATUSID = createField("statusid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
 	 * Create a <code>sistci.tci</code> table reference
@@ -142,7 +137,7 @@ public class Tci extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.da
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.ORGAO_TCI, com.github.gtmelo.sistci_api.data.Keys.PESSOA_TCI, com.github.gtmelo.sistci_api.data.Keys.TCI_CATEGORIA, com.github.gtmelo.sistci_api.data.Keys.TCI_PRAZO, com.github.gtmelo.sistci_api.data.Keys.TCI_FUNDAMENTO_LEGAL, com.github.gtmelo.sistci_api.data.Keys.TCI_GRAU_SIGILO, com.github.gtmelo.sistci_api.data.Keys.TCI_STATUS, com.github.gtmelo.sistci_api.data.Keys.TCI_CIDIC);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.TciRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.ORGAO_TCI, com.github.gtmelo.sistci_api.data.Keys.TCI_CATEGORIA, com.github.gtmelo.sistci_api.data.Keys.PRAZO_TCI, com.github.gtmelo.sistci_api.data.Keys.TCI_FUNDAMENTO_LEGAL, com.github.gtmelo.sistci_api.data.Keys.GRAU_SIGILO_TCI, com.github.gtmelo.sistci_api.data.Keys.STATUS_TCI);
 	}
 
 	/**

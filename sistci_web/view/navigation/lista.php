@@ -1,3 +1,6 @@
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/">Página principal</a>
+</nav>
 
 <div class="row">
     <div class="col-lg-12">

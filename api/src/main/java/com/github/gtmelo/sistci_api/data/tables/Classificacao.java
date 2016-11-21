@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Classificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord> {
 
-	private static final long serialVersionUID = -1595096136;
+	private static final long serialVersionUID = -2115247231;
 
 	/**
 	 * The singleton instance of <code>sistci.classificacao</code>
@@ -32,14 +32,34 @@ public class Classificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.sis
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.classificacao.autoridade_ratificadoraid</code>.
+	 * The column <code>sistci.classificacao.data</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> AUTORIDADE_RATIFICADORAID = createField("autoridade_ratificadoraid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.sql.Date> DATA = createField("data", org.jooq.impl.SQLDataType.DATE.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.classificacao.operacaoid</code>.
+	 * The column <code>sistci.classificacao.imagem</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> OPERACAOID = createField("operacaoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.String> IMAGEM = createField("imagem", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
+
+	/**
+	 * The column <code>sistci.classificacao.pessoaid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> PESSOAID = createField("pessoaid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.classificacao.autoridadeid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> AUTORIDADEID = createField("autoridadeid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.classificacao.ratificadorid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> RATIFICADORID = createField("ratificadorid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.classificacao.tciid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, java.lang.Integer> TCIID = createField("tciid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.classificacao</code> table reference
@@ -92,7 +112,7 @@ public class Classificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.sis
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.CLASSIFICACAO_AUTORIDADE_RATIFICADORA, com.github.gtmelo.sistci_api.data.Keys.FKCLASSIFICA26679);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.ClassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.PESSOA_CLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.CLASSIFICADOR_CLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.RATIFICADOR_CLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.TCI_CLASSIFICACAO);
 	}
 
 	/**

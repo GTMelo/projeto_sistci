@@ -10,7 +10,7 @@
       "Console": {
         "name": "STDOUT",
         "PatternLayout": {
-          "pattern": "%highlight{[%p][%c{2}][%d{ISO8601}] %m%n}"
+          "pattern": "%highlight{[%p][%-5c{2}][%-5d{ISO8601}]} %-5m%n"
         }
       }
     },

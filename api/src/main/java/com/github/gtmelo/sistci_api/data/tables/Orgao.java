@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Orgao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord> {
 
-	private static final long serialVersionUID = -471370573;
+	private static final long serialVersionUID = 1768982301;
 
 	/**
 	 * The singleton instance of <code>sistci.orgao</code>
@@ -32,16 +32,6 @@ public class Orgao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.orgao.organizacaoid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.Integer> ORGANIZACAOID = createField("organizacaoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
-	 * The column <code>sistci.orgao.emailid</code>.
-	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.Integer> EMAILID = createField("emailid", org.jooq.impl.SQLDataType.INTEGER, this, "");
-
-	/**
 	 * The column <code>sistci.orgao.sigla</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.String> SIGLA = createField("sigla", org.jooq.impl.SQLDataType.VARCHAR.length(20), this, "");
@@ -60,6 +50,16 @@ public class Orgao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	 * The column <code>sistci.orgao.endereco</code>.
 	 */
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.String> ENDERECO = createField("endereco", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
+
+	/**
+	 * The column <code>sistci.orgao.emailid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.Integer> EMAILID = createField("emailid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.orgao.orgao_superiorid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, java.lang.Integer> ORGAO_SUPERIORID = createField("orgao_superiorid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.orgao</code> table reference
@@ -112,7 +112,7 @@ public class Orgao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.ORGANIZACAO_ORGAO, com.github.gtmelo.sistci_api.data.Keys.ORGAO_EMAIL);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.OrgaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.ORGAO_EMAIL, com.github.gtmelo.sistci_api.data.Keys.ORGAO_SUPERIOR);
 	}
 
 	/**

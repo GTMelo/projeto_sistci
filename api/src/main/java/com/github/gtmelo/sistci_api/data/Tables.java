@@ -14,9 +14,14 @@ package com.github.gtmelo.sistci_api.data;
 public class Tables {
 
 	/**
-	 * The table sistci.autoridade_ratificadora
+	 * The table sistci.alteracao_prazo
 	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.AutoridadeRatificadora AUTORIDADE_RATIFICADORA = com.github.gtmelo.sistci_api.data.tables.AutoridadeRatificadora.AUTORIDADE_RATIFICADORA;
+	public static final com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazo ALTERACAO_PRAZO = com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazo.ALTERACAO_PRAZO;
+
+	/**
+	 * The table sistci.alteracao_prazo_tci
+	 */
+	public static final com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazoTci ALTERACAO_PRAZO_TCI = com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazoTci.ALTERACAO_PRAZO_TCI;
 
 	/**
 	 * The table sistci.cargo
@@ -27,11 +32,6 @@ public class Tables {
 	 * The table sistci.categoria
 	 */
 	public static final com.github.gtmelo.sistci_api.data.tables.Categoria CATEGORIA = com.github.gtmelo.sistci_api.data.tables.Categoria.CATEGORIA;
-
-	/**
-	 * The table sistci.cidic
-	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.Cidic CIDIC = com.github.gtmelo.sistci_api.data.tables.Cidic.CIDIC;
 
 	/**
 	 * The table sistci.classificacao
@@ -69,14 +69,9 @@ public class Tables {
 	public static final com.github.gtmelo.sistci_api.data.tables.GrauSigilo GRAU_SIGILO = com.github.gtmelo.sistci_api.data.tables.GrauSigilo.GRAU_SIGILO;
 
 	/**
-	 * The table sistci.operacao
+	 * The table sistci.minuta
 	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.Operacao OPERACAO = com.github.gtmelo.sistci_api.data.tables.Operacao.OPERACAO;
-
-	/**
-	 * The table sistci.organizacao
-	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.Organizacao ORGANIZACAO = com.github.gtmelo.sistci_api.data.tables.Organizacao.ORGANIZACAO;
+	public static final com.github.gtmelo.sistci_api.data.tables.Minuta MINUTA = com.github.gtmelo.sistci_api.data.tables.Minuta.MINUTA;
 
 	/**
 	 * The table sistci.orgao
@@ -94,19 +89,9 @@ public class Tables {
 	public static final com.github.gtmelo.sistci_api.data.tables.Prazo PRAZO = com.github.gtmelo.sistci_api.data.tables.Prazo.PRAZO;
 
 	/**
-	 * The table sistci.prorrogacao
-	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.Prorrogacao PRORROGACAO = com.github.gtmelo.sistci_api.data.tables.Prorrogacao.PRORROGACAO;
-
-	/**
 	 * The table sistci.reclassificacao
 	 */
 	public static final com.github.gtmelo.sistci_api.data.tables.Reclassificacao RECLASSIFICACAO = com.github.gtmelo.sistci_api.data.tables.Reclassificacao.RECLASSIFICACAO;
-
-	/**
-	 * The table sistci.reducao
-	 */
-	public static final com.github.gtmelo.sistci_api.data.tables.Reducao REDUCAO = com.github.gtmelo.sistci_api.data.tables.Reducao.REDUCAO;
 
 	/**
 	 * The table sistci.status
@@ -122,4 +107,9 @@ public class Tables {
 	 * VIEW
 	 */
 	public static final com.github.gtmelo.sistci_api.data.tables.ViewClassificacao VIEW_CLASSIFICACAO = com.github.gtmelo.sistci_api.data.tables.ViewClassificacao.VIEW_CLASSIFICACAO;
+
+	/**
+	 * VIEW
+	 */
+	public static final com.github.gtmelo.sistci_api.data.tables.ViewTci VIEW_TCI = com.github.gtmelo.sistci_api.data.tables.ViewTci.VIEW_TCI;
 }

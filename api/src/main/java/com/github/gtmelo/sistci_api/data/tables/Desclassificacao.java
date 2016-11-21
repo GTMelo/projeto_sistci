@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Desclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord> {
 
-	private static final long serialVersionUID = -2112238260;
+	private static final long serialVersionUID = 1905686656;
 
 	/**
 	 * The singleton instance of <code>sistci.desclassificacao</code>
@@ -32,9 +32,29 @@ public class Desclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.
 	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>sistci.desclassificacao.operacaoid</code>.
+	 * The column <code>sistci.desclassificacao.data</code>.
 	 */
-	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.Integer> OPERACAOID = createField("operacaoid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.sql.Date> DATA = createField("data", org.jooq.impl.SQLDataType.DATE.nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.desclassificacao.imagem</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.String> IMAGEM = createField("imagem", org.jooq.impl.SQLDataType.VARCHAR.length(254), this, "");
+
+	/**
+	 * The column <code>sistci.desclassificacao.pessoaid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.Integer> PESSOAID = createField("pessoaid", org.jooq.impl.SQLDataType.INTEGER, this, "");
+
+	/**
+	 * The column <code>sistci.desclassificacao.autoridadeid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.Integer> AUTORIDADEID = createField("autoridadeid", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+	/**
+	 * The column <code>sistci.desclassificacao.tciid</code>.
+	 */
+	public final org.jooq.TableField<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, java.lang.Integer> TCIID = createField("tciid", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
 	/**
 	 * Create a <code>sistci.desclassificacao</code> table reference
@@ -87,7 +107,7 @@ public class Desclassificacao extends org.jooq.impl.TableImpl<com.github.gtmelo.
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.FKDESCLASSIF626384);
+		return java.util.Arrays.<org.jooq.ForeignKey<com.github.gtmelo.sistci_api.data.tables.records.DesclassificacaoRecord, ?>>asList(com.github.gtmelo.sistci_api.data.Keys.PESSOA_DESCLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.AUTORIDADE_DESCLASSIFICACAO, com.github.gtmelo.sistci_api.data.Keys.TCI_DESCLASSIFICACAO);
 	}
 
 	/**

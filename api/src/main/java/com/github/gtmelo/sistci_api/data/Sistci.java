@@ -11,7 +11,7 @@ package com.github.gtmelo.sistci_api.data;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Sistci extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = -217320598;
+	private static final long serialVersionUID = 1004612207;
 
 	/**
 	 * The singleton instance of <code>sistci</code>
@@ -34,10 +34,10 @@ public class Sistci extends org.jooq.impl.SchemaImpl {
 
 	private final java.util.List<org.jooq.Table<?>> getTables0() {
 		return java.util.Arrays.<org.jooq.Table<?>>asList(
-			com.github.gtmelo.sistci_api.data.tables.AutoridadeRatificadora.AUTORIDADE_RATIFICADORA,
+			com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazo.ALTERACAO_PRAZO,
+			com.github.gtmelo.sistci_api.data.tables.AlteracaoPrazoTci.ALTERACAO_PRAZO_TCI,
 			com.github.gtmelo.sistci_api.data.tables.Cargo.CARGO,
 			com.github.gtmelo.sistci_api.data.tables.Categoria.CATEGORIA,
-			com.github.gtmelo.sistci_api.data.tables.Cidic.CIDIC,
 			com.github.gtmelo.sistci_api.data.tables.Classificacao.CLASSIFICACAO,
 			com.github.gtmelo.sistci_api.data.tables.Cpads.CPADS,
 			com.github.gtmelo.sistci_api.data.tables.CpadsPessoa.CPADS_PESSOA,
@@ -45,16 +45,14 @@ public class Sistci extends org.jooq.impl.SchemaImpl {
 			com.github.gtmelo.sistci_api.data.tables.Email.EMAIL,
 			com.github.gtmelo.sistci_api.data.tables.FundamentoLegal.FUNDAMENTO_LEGAL,
 			com.github.gtmelo.sistci_api.data.tables.GrauSigilo.GRAU_SIGILO,
-			com.github.gtmelo.sistci_api.data.tables.Operacao.OPERACAO,
-			com.github.gtmelo.sistci_api.data.tables.Organizacao.ORGANIZACAO,
+			com.github.gtmelo.sistci_api.data.tables.Minuta.MINUTA,
 			com.github.gtmelo.sistci_api.data.tables.Orgao.ORGAO,
 			com.github.gtmelo.sistci_api.data.tables.Pessoa.PESSOA,
 			com.github.gtmelo.sistci_api.data.tables.Prazo.PRAZO,
-			com.github.gtmelo.sistci_api.data.tables.Prorrogacao.PRORROGACAO,
 			com.github.gtmelo.sistci_api.data.tables.Reclassificacao.RECLASSIFICACAO,
-			com.github.gtmelo.sistci_api.data.tables.Reducao.REDUCAO,
 			com.github.gtmelo.sistci_api.data.tables.Status.STATUS,
 			com.github.gtmelo.sistci_api.data.tables.Tci.TCI,
-			com.github.gtmelo.sistci_api.data.tables.ViewClassificacao.VIEW_CLASSIFICACAO);
+			com.github.gtmelo.sistci_api.data.tables.ViewClassificacao.VIEW_CLASSIFICACAO,
+			com.github.gtmelo.sistci_api.data.tables.ViewTci.VIEW_TCI);
 	}
 }

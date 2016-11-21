@@ -7,6 +7,11 @@ and open the template in the editor.
 <html>
 
     <head>
+        <?php
+        $getPg = filter_var($_GET['pg']);
+        include_once './functions.php';
+        include_once './jquery.php';
+        ?>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +25,10 @@ and open the template in the editor.
     <body>
         <?php include "view/include/header.inc"; ?>
         <div class="container" id="content_container">
-            <?php include "view/navigation/mostra_tci.php"; ?>
+            <?php 
+                    escolhePagina($getPg);
+            
+            ?>
         </div>
-        <?php // include "view/include/footer.inc"; ?>
+        <?php
+        // include "view/include/footer.inc"; ?>

@@ -19,23 +19,23 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <form>
+                    <form action="../../control/loginHandler.php" method="post">
                         <div class="form">
                             <div class="form-group row bg-color1 border-radius padded-md">
                                 <label for="login_email" class="col-xs-3 col-form-label">E-mail</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="text" placeholder="seuemail@fazenda.gov.br" id="login_email">
+                                    <input class="form-control" type="text" placeholder="seuemail@fazenda.gov.br" name="login_email" id="login_email">
                                 </div>
                             </div>
                             <div class="form-group row bg-color1 border-radius padded-md">
                                 <label for="login_senha" class="col-xs-3 col-form-label">Senha</label>
                                 <div class="col-xs-9">
-                                    <input class="form-control" type="password" placeholder="******" id="login_senha">
+                                    <input class="form-control" type="password" placeholder="******" name="login_senha" id="login_senha">
                                 </div>
                             </div>
                             <div class="form-group row border-radius padded-md">
                                 <div class="col-xs-12">
-                                    <center><button type="button" class="btn btn-primary btn-lg">Entrar</button> <button type="button" class="btn btn-lg btn-default">Esqueci a senha</button></center>
+                                    <center><button type="submit" class="btn btn-primary btn-lg">Entrar</button> <button type="button" class="btn btn-lg btn-default">Esqueci a senha</button></center>
 
                                 </div>
                             </div>
