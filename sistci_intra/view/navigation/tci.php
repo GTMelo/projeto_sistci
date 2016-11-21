@@ -15,13 +15,14 @@ if ($id == null) {
 <div class="row" id='tci-form'>
 
     <div class="row">
-        <h1 id='titulo_pagina'>Título da Página(Criar novo TCI | Editar TCI)&nbsp<a href="#" id='btn_cancel_edit' class="btn btn-danger">Cancelar edição</a></h1>
+        <h1 id='titulo_pagina'>Editar TCI)&nbsp<a href="#" id='btn_cancel_edit' class="btn btn-danger">Cancelar edição</a></h1>
         <hr>
     </div>
 
     <div class="row bg-color1 padded-md border-radius">
-        <form class="form tci-form">
+        <form class="form tci-form" method="post" action="../../control/requisicao.php">
             <input type="hidden" id="form_action" name="form_action" value="none">
+            <input type="hidden" if="tciid" name="tciid" value="<?php echo $tci['tciid'];?>">
             <div class="col-md-6" id="tci_content-col1">         
                 <div class="form-group">
                     <label for="tipo_documento">Tipo de Documento</label>

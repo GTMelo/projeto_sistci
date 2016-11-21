@@ -25,7 +25,7 @@ public class SwaggerDocumentSetup extends HttpServlet implements Serializable {
         beanConfig.setTitle("SISTCI, API geral");
         beanConfig.setDescription("API geral de gateway para acesso ao banco de dados de termos de classificação da informação");
         beanConfig.setSchemes(new String[]{"http"});
-        beanConfig.setHost("localhost:8080");
+        beanConfig.setHost("localhost:8080/sistci_api");
         beanConfig.setBasePath("/services");
         beanConfig.setResourcePackage("com.github.gtmelo.sistci_api.services");
         beanConfig.setScan(true);
