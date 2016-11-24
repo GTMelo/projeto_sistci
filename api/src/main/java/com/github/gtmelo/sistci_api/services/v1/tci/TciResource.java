@@ -14,10 +14,6 @@ import java.util.List;
 
 import static com.github.gtmelo.sistci_api.main.Main.log;
 
-/**
- * Created by 02364114110 on 09/11/2016.
- */
-
 @Path("/v1/tci")
 @Api(value = "/tci", description = "Gerenciar TCIs")
 

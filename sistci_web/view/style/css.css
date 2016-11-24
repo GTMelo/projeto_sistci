@@ -18,6 +18,19 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
 }
+
+.padded-top-sml {
+    padding-top: 5px;
+}
+
+.padded-top-md{
+    padding-top: 15px;
+}
+
+.tci_form{
+    display: none;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -28,41 +41,40 @@ body {
 }
 
 .footer p{
-    color: #CDB380
+    color: #E8DDCB
 }
 
 .bg-color1{
-    background-color: #473E35;
+    background-color: #E8DDCB;
 }
-
 .bg-color2{
-    background-color: #3C2E2B;
+    background-color: #CDB380;
 }
 
 .bg-color3{
-    background-color: #834633;
+    background-color: #036564;
 }
 
 .bg-color4{
-    background-color: #F2DDC2;
+    background-color: #033649;
 }
 
 .bg-color5{
-    background-color: #322423;
+    background-color: #031634;
 }
 
 .border-color-1 {
-    border: 2px solid #834633
+    border: 2px solid #E8DDCB;
 }
 
 .border-top-color3{
-    border-top: 3px solid  #CDB380
+    border-top: 3px solid #036564;
 }
 
 .border-bottom-color3_4{
     position: relative;
-    border-bottom: 5px solid #834633;
-    outline: 3px solid #CDB380
+    border-bottom: 5px solid #033649;
+    outline: 3px solid #036564;
 }
 
 #content_container {
@@ -73,7 +85,7 @@ body {
     width: 40px;
     height: 40px;
     fill: #fff;
-    background-color: #834633;
+    background-color: #036564;
     border-radius: 5px;
     padding: 5px;
     transition: fill .3s ease-out;
@@ -89,6 +101,10 @@ body {
 
 .border-radius {
     border-radius: 5px;
+}
+
+.margin-sml{
+    margin: 5px;
 }
 
 .padded-sml {
@@ -117,7 +133,39 @@ body {
     border-bottom: 1px solid #CDB380; 
 }
 
-.h-border > h3 {
+.h-border h3 {
     padding-bottom: 3px;
     border-bottom: 1px solid #E6E6E6
+}
+
+.estado_minuta, .estado_classificado, .estado_desclassificado {
+    display: none;
+}
+
+.force-width {
+    width: 100% !important;
+}
+
+.tci-cls{
+    background-color: #E0E4CD;
+}
+
+.tci-dcls{
+    background-color: #69D2E7;
+}
+
+.tci-prrdz{
+    background-color: #E0E4CD;
+}
+
+.tci-rcls{
+    background-color: #E0E4CD;
+}
+
+.tci-prgd{
+    background-color: #FA6900;
+}
+
+#tci-form {
+    display: none;
 }
